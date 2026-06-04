@@ -5,10 +5,8 @@ Generated: 2026-06-04
 ## Completed Evidence
 
 - Branch: `codex/sumika-v3-memory-assets`
-- Pushed commits:
-  - `d1b5e46 Add Sumika advanced memory architecture foundation`
-  - `355a3e6 Generate Sumika role assets and image pipeline`
-  - `e85860b Add advanced memory sidecar adapters`
+- Current branch includes the advanced memory foundation, generated role/image assets,
+  sidecar adapters, verification report, and ECS deployment fixes.
 - Detailed execution plan is stored at `docs/plans/sumika-v3-advanced-memory-assets.md`.
 - Upstream repositories were cloned locally under `vendor/upstream/` and locked in `third_party.lock.yml`.
 - Upstream Sumika integration patches are stored under `patches/upstream/*/sumika-integration.patch`.
@@ -62,19 +60,49 @@ Generated: 2026-06-04
 - Runtime now loads DeepSeek detailed role assets when present.
 - Advanced sidecars are optional and disabled by default; SQLite fallback remains active.
 
-## Deployment Verification Gap
+## ECS Deployment Verification
 
-Local Docker verification could not run because Docker CLI is not installed on this workstation:
+- SSH works with `ecs-user@123.56.65.173`.
+- Docker is installed on ECS:
+  - Docker: `29.1.3`
+  - Docker Compose: `2.40.3+ds1-0ubuntu1~22.04.1`
+- `/opt/sumika` was created as the clean deployment checkout for
+  `codex/sumika-v3-memory-assets`.
+- Server-only runtime files were created outside git:
+  - `/opt/sumika/deploy/.env`
+  - `/opt/sumika/secrets/openrouter_key`
+  - `/opt/sumika/data/`
+- Docker Hub direct access timed out from the Beijing ECS. Docker daemon was configured
+  with registry mirror `https://docker.m.daocloud.io/`.
+- `Dockerfile` now supports configurable mirror build args and defaults to deployment
+  friendly mirrors:
+  - `APT_DEBIAN_MIRROR=http://mirrors.aliyun.com/debian`
+  - `APT_SECURITY_MIRROR=http://mirrors.aliyun.com/debian-security`
+  - `PIP_INDEX_URL=http://mirrors.aliyun.com/pypi/simple/`
+- Compose config validation passed:
+  - `docker compose --env-file deploy/.env -f deploy/compose.yml config --quiet`
+  - `docker compose --env-file deploy/.env -f deploy/compose.yml --profile advanced-memory config --quiet`
+- `sumika-agent` image build passed on ECS:
+  - `docker compose --env-file deploy/.env -f deploy/compose.yml build --progress=plain sumika-agent`
+- The existing direct Python `sumika-agent.service` was migrated to Docker Compose while
+  preserving the OneBot access token and SQLite data. NapCat remains managed by
+  `napcat-shell.service`; the Compose systemd template now starts only the `sumika-agent`
+  container to avoid touching the logged-in QQ runtime.
+- Startup verification passed:
+  - `sudo systemctl enable --now sumika-agent`
+  - `systemctl is-active sumika-agent` returned `active`
+  - `curl -fsS http://127.0.0.1:8787/health` returned
+    `{"ok":true,"name":"星见澄夏","onebot_clients":1}`
+- Restart recovery verification passed:
+  - `sudo systemctl restart sumika-agent`
+  - `systemctl is-active sumika-agent` returned `active`
+  - health check again returned `ok=true` and `onebot_clients=1`
+- `napcat-shell.service` remained active during the migration.
 
-```text
-docker: The term 'docker' is not recognized as the name of a cmdlet...
-```
+## Remaining Notes
 
-ECS SSH read-only probes also failed for both likely users:
-
-```text
-root@123.56.65.173: Permission denied (publickey,password).
-ubuntu@123.56.65.173: Permission denied (publickey,password).
-```
-
-Because of that, Docker Compose startup/restart on ECS remains unverified. The code and compose files are present, but runtime validation needs working SSH credentials or an interactive console session.
+- Local Docker verification still cannot run on this Windows workstation because Docker CLI
+  is not installed locally. ECS runtime validation has been completed instead.
+- The optional advanced-memory sidecars were config-validated and patch-validated, but their
+  full image builds were not started because the v3 runtime keeps SQLite fallback active and
+  sidecars are behind the `advanced-memory` profile.

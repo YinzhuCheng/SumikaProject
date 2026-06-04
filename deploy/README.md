@@ -78,6 +78,10 @@ sudo systemctl enable --now sumika-agent
 
 ## Docker Compose Service
 
+The systemd template manages only the `sumika-agent` container. Keep an existing
+GUI NapCat deployment under `napcat-shell.service`, or start the Compose `napcat`
+service manually only when you intentionally want the containerized QQ runtime.
+
 ```bash
 cd /opt/sumika
 sudo cp deploy/sumika-agent.service /etc/systemd/system/sumika-agent.service
