@@ -92,11 +92,17 @@ services:
     profiles:
       - advanced-memory
     environment:
+      - MEMORY_CONFIG=/app/configuration.yml
+      - HOST=0.0.0.0
+      - PORT=8080
+      - POSTGRES_PASSWORD=${SUMIKA_POSTGRES_PASSWORD:-sumika-local-dev}
+      - NEO4J_PASSWORD=${SUMIKA_NEO4J_PASSWORD:-sumika-local-dev}
       - OPENAI_BASE_URL=${MEMORY_LLM_BASE_URL:-https://api.deepseek.com}
       - OPENAI_API_KEY=${MEMORY_LLM_API_KEY:-}
       - OPENAI_MODEL=${MEMORY_LLM_MODEL:-deepseek-v4-pro}
-      - NEO4J_URI=bolt://neo4j:7687
-      - DATABASE_URL=postgresql://sumika:sumika-local-dev@postgres:5432/sumika_memory
+    volumes:
+      - ./memmachine/configuration.yml:/app/configuration.yml:ro
+      - ../data/memmachine:/app/data
     depends_on:
       - neo4j
       - postgres
@@ -110,9 +116,11 @@ services:
       - advanced-memory
     environment:
       - OPENAI_BASE_URL=${MEMORY_LLM_BASE_URL:-https://api.deepseek.com}
-      - OPENAI_API_KEY=${MEMORY_LLM_API_KEY:-}
-      - OPENAI_MODEL=${MEMORY_LLM_MODEL:-deepseek-v4-pro}
+      - OPENAI_API_KEY=${MEMORY_LLM_API_KEY:-sumika-smoke-disabled}
+      - MODEL_NAME=${MEMORY_LLM_MODEL:-deepseek-v4-pro}
       - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=${SUMIKA_NEO4J_PASSWORD:-sumika-local-dev}
     depends_on:
       - neo4j
 
@@ -124,9 +132,36 @@ services:
     profiles:
       - advanced-memory
     environment:
+      - ENVIRONMENT=local
+      - DEBUG=false
+      - ENABLE_BACKEND_ACCESS_CONTROL=false
+      - DATA_ROOT_DIRECTORY=/app/data/storage
+      - SYSTEM_ROOT_DIRECTORY=/app/data/system
+      - CACHE_ROOT_DIRECTORY=/app/data/cache
+      - COGNEE_LOGS_DIR=/app/data/logs
       - OPENAI_BASE_URL=${MEMORY_LLM_BASE_URL:-https://api.deepseek.com}
       - OPENAI_API_KEY=${MEMORY_LLM_API_KEY:-}
-      - OPENAI_MODEL=${MEMORY_LLM_MODEL:-deepseek-v4-pro}
-      - DATABASE_URL=postgresql://sumika:sumika-local-dev@postgres:5432/sumika_memory
+      - LLM_MODEL=${MEMORY_LLM_MODEL:-deepseek-v4-pro}
+      - DB_PROVIDER=postgres
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USERNAME=${SUMIKA_POSTGRES_USER:-sumika}
+      - DB_PASSWORD=${SUMIKA_POSTGRES_PASSWORD:-sumika-local-dev}
+      - DB_NAME=${SUMIKA_POSTGRES_DB:-sumika_memory}
+      - MIGRATION_DB_PROVIDER=postgres
+      - MIGRATION_DB_HOST=postgres
+      - MIGRATION_DB_PORT=5432
+      - MIGRATION_DB_USERNAME=${SUMIKA_POSTGRES_USER:-sumika}
+      - MIGRATION_DB_PASSWORD=${SUMIKA_POSTGRES_PASSWORD:-sumika-local-dev}
+      - MIGRATION_DB_NAME=${SUMIKA_POSTGRES_DB:-sumika_memory}
+      - GRAPH_DATABASE_PROVIDER=neo4j
+      - GRAPH_DATABASE_URL=bolt://neo4j:7687
+      - GRAPH_DATABASE_HOST=neo4j
+      - GRAPH_DATABASE_PORT=7687
+      - GRAPH_DATABASE_USERNAME=neo4j
+      - GRAPH_DATABASE_PASSWORD=${SUMIKA_NEO4J_PASSWORD:-sumika-local-dev}
+    volumes:
+      - ../data/cognee:/app/data
     depends_on:
       - postgres
+      - neo4j

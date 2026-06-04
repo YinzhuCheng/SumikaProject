@@ -1,0 +1,54 @@
+logging:
+  path: /app/data/memmachine.log
+  level: info
+
+server:
+  host: 0.0.0.0
+  port: 8080
+
+episode_store:
+  database: db_postgres
+
+episodic_memory:
+  enabled: false
+  long_term_memory_enabled: false
+  short_term_memory_enabled: false
+
+semantic_memory:
+  enabled: false
+  config_database: db_postgres
+
+session_manager:
+  database: db_postgres
+
+prompt:
+  default_project_categories:
+    - profile_prompt
+
+resources:
+  databases:
+    db_postgres:
+      provider: postgres
+      config:
+        host: postgres
+        port: 5432
+        user: sumika
+        password: $POSTGRES_PASSWORD
+        db_name: sumika_memory
+        pool_size: 2
+        max_overflow: 2
+        pool_timeout: 30
+        pool_recycle: 3000
+        pool_pre_ping: true
+    db_neo4j:
+      provider: neo4j
+      config:
+        uri: bolt://neo4j:7687
+        user: neo4j
+        password: $NEO4J_PASSWORD
+        max_connection_pool_size: 20
+        connection_acquisition_timeout: 30.0
+        max_connection_lifetime: 3000.0
+  embedders: {}
+  language_models: {}
+  rerankers: {}

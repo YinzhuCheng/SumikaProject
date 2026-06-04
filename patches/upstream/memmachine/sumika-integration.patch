@@ -1,35 +1,117 @@
-diff --git a/integrations/sumika/qq_episode_schema.py b/integrations/sumika/qq_episode_schema.py
-new file mode 100644
-index 0000000..cc9d56f
---- /dev/null
-+++ b/integrations/sumika/qq_episode_schema.py
-@@ -0,0 +1,29 @@
-+from __future__ import annotations
+diff --git a/Dockerfile b/Dockerfile
+index f259802..efede2e 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -1,80 +1,41 @@
+-#
+-# Stage 1: Builder
+-#
+-FROM python:3.12-slim-trixie AS builder
+-
+-# Update OS and Python/PIP Packages
+-# Install curl
+-RUN apt-get update && \
+-    apt-get upgrade -y && \
+-    apt-get install -y curl && \
+-    apt-get clean && \
+-    rm -rf /var/lib/apt/lists/*
+-
+-RUN python -m pip install --upgrade pip
+-
+-# Copy uv binary from the source image INTO the builder stage
+-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
+-
+-WORKDIR /app
+-
+-# Copy dependency files
+-COPY pyproject.toml uv.lock ./
+-
+-# Determine whether to include GPU dependencies
+-ARG GPU="false"
+-ARG SCM_VERSION="0.0.0"
+-ENV SETUPTOOLS_SCM_PRETEND_VERSION=${SCM_VERSION}
+-
+-# Install dependencies into a virtual environment, but NOT the project itself
+-RUN --mount=type=cache,target=/root/.cache/uv \
+-    if [ "$GPU" = "true" ]; then \
+-        uv sync --frozen --package memmachine-server --no-install-workspace --no-editable --no-dev --extra gpu; \
+-    else \
+-        uv sync --frozen --package memmachine-server --no-install-workspace --no-editable --no-dev; \
+-    fi
+-
+-# Copy the application source code
+-COPY . /app
+-
+-# Install the project itself from the local source
+-RUN --mount=type=cache,target=/root/.cache/uv \
+-    if [ "$GPU" = "true" ]; then \
+-        uv sync --frozen --package memmachine-server --no-editable --no-dev --extra gpu; \
+-    else \
+-        uv sync --frozen --package memmachine-server --no-editable --no-dev; \
+-    fi
+-
+-#
+-# Stage 2: Final
+-#
+-FROM python:3.12-slim-trixie AS final
+-
+-# Update OS and Python/PIP Packages
+-# Install curl
+-RUN apt-get update && \
+-    apt-get upgrade -y && \
+-    apt-get install -y curl && \
++FROM python:3.12-slim-trixie
 +
-+from dataclasses import dataclass, field
-+from typing import Any, Literal
++ARG APT_DEBIAN_MIRROR=http://mirrors.aliyun.com/debian
++ARG APT_SECURITY_MIRROR=http://mirrors.aliyun.com/debian-security
++ARG PIP_INDEX_URL=http://mirrors.aliyun.com/pypi/simple/
++ARG SCM_VERSION=0.0.0
 +
++ENV PYTHONDONTWRITEBYTECODE=1 \
++    PYTHONUNBUFFERED=1 \
++    PIP_NO_CACHE_DIR=1 \
++    PIP_INDEX_URL=${PIP_INDEX_URL} \
++    PIP_TRUSTED_HOST=mirrors.aliyun.com \
++    SETUPTOOLS_SCM_PRETEND_VERSION=${SCM_VERSION} \
++    HOST=0.0.0.0
 +
-+QQScope = Literal["private", "group"]
-+
-+
-+@dataclass(frozen=True)
-+class QQEpisode:
-+    scope: QQScope
-+    qq_user_id: str
-+    group_id: str | None
-+    message_id: str | None
-+    nickname: str | None
-+    timestamp: float
-+    modality: str
-+    redaction_status: str
-+    message: str
-+    reply: str
-+    metadata: dict[str, Any] = field(default_factory=dict)
-+
-+
-+SUMIKA_PROFILE_EXTRACTION_PROMPT = """
-+你正在为星见澄夏维护长期个人记忆。只提取稳定偏好、边界、称呼和明确承诺。
-+不要保存手机号、住址、证件号、密码、token、cookie、验证码等敏感信息。
-+输出 JSON：display_name、preferences、boundaries、summary_delta、relationship_delta。
-+""".strip()
++RUN set -eux; \
++    if [ -f /etc/apt/sources.list.d/debian.sources ]; then \
++        sed -i \
++            -e "s#http://deb.debian.org/debian-security#${APT_SECURITY_MIRROR}#g" \
++            -e "s#http://deb.debian.org/debian#${APT_DEBIAN_MIRROR}#g" \
++            /etc/apt/sources.list.d/debian.sources; \
++    fi; \
++    apt-get update && \
++    apt-get install -y --no-install-recommends curl ca-certificates && \
+     apt-get clean && \
+     rm -rf /var/lib/apt/lists/*
+ 
+-RUN python -m pip install --upgrade pip
+-
+ WORKDIR /app
+ 
+-# Copy the environment from the builder stage
+-COPY --from=builder /app/.venv /app/.venv
+-
+-# Set the PATH to include the virtual environment's bin directory
+-ENV PATH="/app/.venv/bin:$PATH"
++COPY pyproject.toml ./
++COPY packages ./packages
++COPY alembic.ini ./alembic.ini
++COPY integrations ./integrations
+ 
+-# Download NLTK data and models
+-RUN python -c "import nltk, sys; \
+-    passed = nltk.download('punkt_tab') and nltk.download('stopwords'); \
+-    sys.exit(0 if passed else 1)"
++RUN pip install ./packages/common ./packages/client ./packages/server
+ 
+-# Set host to 0.0.0.0 to allow external access
+-ENV HOST=0.0.0.0
++RUN timeout 60 python -c "import nltk; nltk.download('punkt_tab', quiet=True); nltk.download('stopwords', quiet=True)" || true
+ 
+ EXPOSE 8080
+-CMD ["sh", "-c", "memmachine-server"]
++HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD python -c "import socket; s = socket.create_connection(('127.0.0.1', 8080), 5); s.close()"
++CMD ["memmachine-server"]

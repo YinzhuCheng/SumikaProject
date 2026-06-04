@@ -6,6 +6,7 @@ This directory contains reusable deployment templates. Real hostnames, QQ accoun
 
 - `compose.yml`: Docker Compose stack for `sumika-agent`, NapCat, and optional AstrBot.
 - Advanced-memory sidecars are behind the `advanced-memory` Compose profile and require `scripts/manage_upstreams.py clone` plus `apply-patches` before building.
+- `memmachine/configuration.yml`: non-secret MemMachine smoke/runtime configuration.
 - `.env.example`: application environment template.
 - `napcat.env.example`: NapCat systemd environment template.
 - `sumika-agent.service`: Docker Compose systemd template.
@@ -45,8 +46,13 @@ MEMMACHINE_URL=http://memmachine:8080
 GRAPHITI_URL=http://graphiti:8000
 COGNEE_URL=http://cognee:8000
 NEO4J_AUTH=neo4j/<strong-local-password>
+SUMIKA_NEO4J_PASSWORD=<same-neo4j-password>
 SUMIKA_POSTGRES_PASSWORD=<strong-local-password>
 ```
+
+`MEMORY_LLM_API_KEY` may be left empty while validating sidecar startup. In that mode
+MemMachine starts with memory generation disabled, Graphiti uses a local smoke placeholder
+key and should not be called for extraction, and the main agent keeps SQLite fallback.
 
 ## Local Sync
 
@@ -95,10 +101,13 @@ To prepare optional advanced-memory sidecars:
 .venv/bin/python scripts/manage_upstreams.py clone
 .venv/bin/python scripts/manage_upstreams.py apply-patches
 docker compose -f deploy/compose.yml --profile advanced-memory build
+docker compose -f deploy/compose.yml --profile advanced-memory pull neo4j postgres
 docker compose -f deploy/compose.yml --profile advanced-memory up -d
 ```
 
-The main agent keeps SQLite fallback enabled, so QQ text replies continue even if these sidecars are down.
+The advanced-memory profile starts MemMachine, Graphiti, Cognee, Neo4j, and Postgres on the
+private Compose network or localhost-bound ports only. The main agent keeps SQLite fallback
+enabled, so QQ text replies continue even if these sidecars are down.
 
 ## NapCat Shell Service
 
