@@ -40,6 +40,10 @@ Optional advanced-memory environment:
 MEMORY_LLM_BASE_URL=https://api.deepseek.com
 MEMORY_LLM_MODEL=deepseek-v4-pro
 MEMORY_LLM_API_KEY=<server-side-memory-llm-key>
+ADVANCED_MEMORY_ENABLED=true
+MEMMACHINE_URL=http://memmachine:8080
+GRAPHITI_URL=http://graphiti:8000
+COGNEE_URL=http://cognee:8000
 NEO4J_AUTH=neo4j/<strong-local-password>
 SUMIKA_POSTGRES_PASSWORD=<strong-local-password>
 ```

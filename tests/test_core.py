@@ -9,6 +9,7 @@ import sumika_agent.onebot as onebot_module
 import sumika_agent.proactive as proactive_module
 from sumika_agent.favorability import clamp, natural_invite_reply, score_delta
 from sumika_agent.memory import MemoryEvent, MemoryQuery, SQLiteMemoryGateway
+from sumika_agent.memory_backends import AdvancedMemoryGateway, SidecarConfig
 from sumika_agent.onebot import OneBotHub
 from sumika_agent.privacy import looks_sensitive, redact_sensitive
 from sumika_agent.proactive import ProactiveScheduler
@@ -66,6 +67,26 @@ def test_sqlite_memory_gateway_export_and_delete(tmp_path):
     assert "13800138000" not in exported["interactions"][0]["message"]
     gateway.delete_user_memory("10001")
     assert not gateway.export_user_memory("10001")["interactions"]
+
+
+def test_advanced_memory_gateway_falls_back_when_sidecars_unavailable(tmp_path):
+    store = Store(tmp_path / "sumika.sqlite3")
+    fallback = SQLiteMemoryGateway(store, RoleAssets.load(Path("roles/sumika")))
+    gateway = AdvancedMemoryGateway(
+        fallback,
+        SidecarConfig(
+            memmachine_url="http://127.0.0.1:1",
+            graphiti_url="http://127.0.0.1:1",
+            cognee_url="http://127.0.0.1:1",
+            timeout_seconds=0.05,
+        ),
+    )
+    gateway.ingest_event(
+        MemoryEvent(scope="private", target_id="10001", user_id="10001", message="喜欢星空")
+    )
+    context = gateway.retrieve_context(MemoryQuery(user_id="10001", text="星空"))
+    assert context.profile["user_id"] == "10001"
+    assert fallback.export_user_memory("10001")["interactions"]
 
 
 def test_proactive_time_window(monkeypatch):

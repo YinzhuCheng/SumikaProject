@@ -642,7 +642,7 @@ stages:
       created: 1780571172
 - id: standees
   candidate_count: 60
-  success_count: 59
+  success_count: 60
   selected_count: 20
   results:
   - stage: standees
@@ -1100,11 +1100,13 @@ stages:
   - stage: standees
     index: 55
     transparent_required: true
-    status: failed
-    path: assets/generated/candidates/sumika_v3/standees/standees_055.png
-    error: 'Server error ''503 Service Unavailable'' for url ''https://yunwu.ai/v1/images/generations''
-
-      For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503'
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_055_repair_edits.png
+    alpha: true
+    response: {}
+    registered_existing_repair: true
+    repaired: true
+    repair_endpoint: edits_with_reference
   - stage: standees
     index: 56
     transparent_required: true
@@ -1147,7 +1149,7 @@ stages:
       created: 1780572419
 - id: avatars
   candidate_count: 9
-  success_count: 8
+  success_count: 9
   selected_count: 3
   results:
   - stage: avatars
@@ -1212,11 +1214,13 @@ stages:
   - stage: avatars
     index: 8
     transparent_required: true
-    status: failed
-    path: assets/generated/candidates/sumika_v3/avatars/avatars_008.png
-    error: 'Server error ''503 Service Unavailable'' for url ''https://yunwu.ai/v1/images/generations''
-
-      For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503'
+    status: ok
+    path: assets/generated/candidates/sumika_v3/avatars/avatars_008_repair_edits.png
+    alpha: true
+    response:
+      created: 1780577692
+    repaired: true
+    repair_endpoint: edits_with_reference
   - stage: avatars
     index: 9
     transparent_required: true
@@ -1227,7 +1231,7 @@ stages:
       created: 1780572746
 - id: stickers
   candidate_count: 30
-  success_count: 29
+  success_count: 30
   selected_count: 10
   results:
   - stage: stickers
@@ -1371,11 +1375,13 @@ stages:
   - stage: stickers
     index: 17
     transparent_required: true
-    status: failed
-    path: assets/generated/candidates/sumika_v3/stickers/stickers_017.png
-    error: 'Server error ''503 Service Unavailable'' for url ''https://yunwu.ai/v1/images/generations''
-
-      For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503'
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_017_repair_edits.png
+    alpha: true
+    response:
+      created: 1780577877
+    repaired: true
+    repair_endpoint: edits_with_reference
   - stage: stickers
     index: 18
     transparent_required: true
@@ -1482,7 +1488,7 @@ stages:
       created: 1780573393
 - id: cg
   candidate_count: 45
-  success_count: 43
+  success_count: 45
   selected_count: 15
   results:
   - stage: cg
@@ -1703,9 +1709,13 @@ stages:
   - stage: cg
     index: 26
     transparent_required: false
-    status: failed
-    path: assets/generated/candidates/sumika_v3/cg/cg_026.png
-    error: All connection attempts failed
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_026_repair_edits.png
+    alpha: false
+    response:
+      created: 1780578087
+    repaired: true
+    repair_endpoint: edits_with_reference
   - stage: cg
     index: 27
     transparent_required: false
@@ -1757,11 +1767,13 @@ stages:
   - stage: cg
     index: 33
     transparent_required: false
-    status: failed
-    path: assets/generated/candidates/sumika_v3/cg/cg_033.png
-    error: 'Server error ''503 Service Unavailable'' for url ''https://yunwu.ai/v1/images/generations''
-
-      For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503'
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_033_repair_edits.png
+    alpha: false
+    response:
+      created: 1780578276
+    repaired: true
+    repair_endpoint: edits_with_reference
   - stage: cg
     index: 34
     transparent_required: false

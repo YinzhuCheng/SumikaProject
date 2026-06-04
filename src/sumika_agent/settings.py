@@ -44,6 +44,12 @@ class Settings(BaseSettings):
     ocr_enabled: bool = Field(default=True, validation_alias="OCR_ENABLED")
     asr_enabled: bool = Field(default=False, validation_alias="ASR_ENABLED")
 
+    advanced_memory_enabled: bool = Field(default=False, validation_alias="ADVANCED_MEMORY_ENABLED")
+    memmachine_url: str | None = Field(default=None, validation_alias="MEMMACHINE_URL")
+    graphiti_url: str | None = Field(default=None, validation_alias="GRAPHITI_URL")
+    cognee_url: str | None = Field(default=None, validation_alias="COGNEE_URL")
+    memory_sidecar_timeout_seconds: float = Field(default=3.0, validation_alias="MEMORY_SIDECAR_TIMEOUT_SECONDS")
+
     @property
     def zoneinfo(self) -> ZoneInfo:
         return ZoneInfo(self.tz)

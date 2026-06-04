@@ -9,6 +9,7 @@ from fastapi.staticfiles import StaticFiles
 
 from .budget import BudgetManager
 from .memory import SQLiteMemoryGateway
+from .memory_backends import AdvancedMemoryGateway, SidecarConfig
 from .multimodal import MultimodalProcessor
 from .onebot import OneBotHub
 from .openrouter import OpenRouterClient
@@ -29,7 +30,19 @@ budget = BudgetManager(settings, store)
 openrouter = OpenRouterClient(settings, store)
 search_tool = SearchTool(settings, store, budget)
 multimodal = MultimodalProcessor(settings, budget)
-memory_gateway = SQLiteMemoryGateway(store, persona.role_assets)
+sqlite_memory_gateway = SQLiteMemoryGateway(store, persona.role_assets)
+if settings.advanced_memory_enabled:
+    memory_gateway = AdvancedMemoryGateway(
+        sqlite_memory_gateway,
+        SidecarConfig(
+            memmachine_url=settings.memmachine_url,
+            graphiti_url=settings.graphiti_url,
+            cognee_url=settings.cognee_url,
+            timeout_seconds=settings.memory_sidecar_timeout_seconds,
+        ),
+    )
+else:
+    memory_gateway = sqlite_memory_gateway
 hub = OneBotHub(settings, store, persona, budget, openrouter, search_tool, multimodal, memory_gateway)
 scheduler = ProactiveScheduler(settings, store, persona, hub)
 

@@ -12,6 +12,10 @@ services:
       - DATA_DIR=/app/data
       - ASSETS_DIR=/app/assets
       - OPENROUTER_API_KEY_FILE=/run/secrets/openrouter_key
+      - ADVANCED_MEMORY_ENABLED=${ADVANCED_MEMORY_ENABLED:-false}
+      - MEMMACHINE_URL=${MEMMACHINE_URL:-http://memmachine:8080}
+      - GRAPHITI_URL=${GRAPHITI_URL:-http://graphiti:8000}
+      - COGNEE_URL=${COGNEE_URL:-http://cognee:8000}
     ports:
       - "127.0.0.1:8787:8787"
     volumes:
