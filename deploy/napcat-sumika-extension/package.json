@@ -1,0 +1,9 @@
+{
+  "name": "napcat-sumika-extension",
+  "plugin": "Sumika QQ Extension",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.mjs",
+  "description": "Custom NapCat actions for Sumika profile and friend operations.",
+  "author": "sumika-agent"
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>星见澄夏 管理台</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>星见澄夏</h1>
+        <p>QQ Agent 控制台</p>
+      </div>
+      <form id="token-form" class="token-form">
+        <input id="token-input" type="password" placeholder="Admin token" autocomplete="current-password" />
+        <button type="submit">连接</button>
+      </form>
+    </header>
+
+    <main class="layout">
+      <section class="panel status-panel">
+        <h2>运行状态</h2>
+        <div id="status-grid" class="metric-grid"></div>
+      </section>
+
+      <section class="panel">
+        <h2>待审批</h2>
+        <div id="approvals" class="list"></div>
+      </section>
+
+      <section class="panel">
+        <h2>白名单</h2>
+        <form id="whitelist-form" class="inline-form">
+          <select id="target-type">
+            <option value="private">私聊</option>
+            <option value="group">群聊</option>
+          </select>
+          <input id="target-id" placeholder="QQ / 群号" />
+          <input id="target-label" placeholder="备注" />
+          <button type="submit">保存</button>
+        </form>
+        <div id="whitelist" class="list compact"></div>
+      </section>
+
+      <section class="panel">
+        <h2>世界记忆</h2>
+        <form id="world-form" class="stack-form">
+          <textarea id="world-content" rows="3" placeholder="写入一条长期世界记忆"></textarea>
+          <button type="submit">写入</button>
+        </form>
+        <div id="world-memory" class="list"></div>
+      </section>
+
+      <section class="panel wide">
+        <h2>个人记忆与好感</h2>
+        <div id="user-memory" class="table-wrap"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+

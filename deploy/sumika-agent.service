@@ -1,0 +1,16 @@
+[Unit]
+Description=Sumika QQ Agent Docker Compose stack
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/opt/sumika
+ExecStart=/usr/bin/docker compose -f deploy/compose.yml --env-file deploy/.env up -d --build
+ExecStop=/usr/bin/docker compose -f deploy/compose.yml --env-file deploy/.env down
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target

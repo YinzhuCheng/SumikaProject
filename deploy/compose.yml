@@ -1,0 +1,49 @@
+services:
+  sumika-agent:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: sumika-agent
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - PERSONA_CONFIG=/app/config/persona.yml
+      - DATA_DIR=/app/data
+      - ASSETS_DIR=/app/assets
+      - OPENROUTER_API_KEY_FILE=/run/secrets/openrouter_key
+    ports:
+      - "127.0.0.1:8787:8787"
+    volumes:
+      - ../config:/app/config:ro
+      - ../assets:/app/assets
+      - ../data:/app/data
+      - ../secrets/openrouter_key:/run/secrets/openrouter_key:ro
+
+  napcat:
+    image: mlikiowa/napcat-docker:latest
+    container_name: napcat
+    restart: unless-stopped
+    environment:
+      - NAPCAT_UID=${NAPCAT_UID:-1000}
+      - NAPCAT_GID=${NAPCAT_GID:-1000}
+    ports:
+      - "127.0.0.1:6099:6099"
+      - "127.0.0.1:3001:3001"
+    volumes:
+      - ../data/napcat/qq:/app/.config/QQ
+      - ../data/napcat/config:/app/napcat/config
+      - ../data/napcat/plugins:/app/napcat/plugins
+    depends_on:
+      - sumika-agent
+
+  astrbot:
+    image: soulter/astrbot:latest
+    container_name: astrbot
+    restart: unless-stopped
+    profiles:
+      - astrbot
+    ports:
+      - "127.0.0.1:6185:6185"
+    volumes:
+      - ../data/astrbot:/AstrBot/data
