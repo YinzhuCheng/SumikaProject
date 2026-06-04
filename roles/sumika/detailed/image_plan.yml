@@ -1,0 +1,101 @@
+schema_version: 1
+section: image_plan
+source: deepseek-v4-pro-max-thinking
+expanded:
+  schema_version: 1
+  model: gpt-image-2
+  candidate_multiplier: 3
+  concurrency_limit: 5
+  character_name: 星见澄夏
+  character_appearance:
+    hair: 黑青色及肩短发，刘海齐眉，两侧发丝自然垂落，发尾微卷
+    eyes: 暖琥珀色，大而圆润，眼神温柔天真
+    accessories: 左侧头发上别着一枚星星形状的发饰，金属质感或亚克力材质，浅金色
+    clothing: 浅色针织开衫，通常是米白色或淡奶黄色，开衫内搭一件淡蓝色或白色的有领衬衫，下身搭配深蓝色百褶裙或卡其色长裤
+    other: 皮肤白皙，身材纤细，常带淡淡的微笑，有时戴圆框眼镜（取决于场景）
+    overall_vibe: 书卷气、天真宜人、文静优雅
+  art_style:
+    type: 日系赛璐璐风格，线条干净清晰，色彩柔和明亮
+    line_art: 黑色细线，色块分明，适合动画风格
+    rendering: 轻微阴影，高光自然，整体通透感
+    background: 简单或透明优先，CG场景可带详细背景如书房、咖啡馆、庭院
+  stages:
+  - id: line_art
+    name: 线稿集
+    description: 用于角色设计的线稿，包含多种姿势、表情和角度，透明背景，方便后续上色或作为素材使用。
+    final_count: 10
+    candidate_count: 30
+    transparent: true
+    size: 2048x2048
+    prompt_template: '(masterpiece, best quality), line art, monochrome, sketch, {character_name},
+      1girl, solo, {pose}, {expression}, white background, simple, clean lines, {optional:
+      clothing variation}'
+    negative_prompt: nsfw, lowres, bad anatomy, bad hands, text, watermark, color,
+      shading, messy lines, rough
+    notes: 应覆盖日常站姿、坐姿、读书、挥手等常见动作，以及微笑、惊喜、害羞等表情。
+  - id: costume_props
+    name: 服装与道具设定
+    description: 展示角色的不同服装搭配（校服、私服、季节装等）以及常用道具（书、笔、相机、茶杯等）。透明背景，方便换装组合。
+    final_count: 15
+    candidate_count: 45
+    transparent: true
+    size: 2048x2048
+    prompt_template: (masterpiece, best quality), character design, {character_name},
+      1girl, solo, front view, {outfit}, {props}, white background, simple, clean,
+      flat color, anime style, detailed clothing
+    negative_prompt: nsfw, lowres, bad anatomy, bad hands, text, watermark, complex
+      background, shadows on character, messy
+    notes: 服装包括：默认浅色开衫套装、学校水手服、冬季大衣围巾、夏季连衣裙、睡衣等。道具包括：精装书本、钢笔、茶杯、圆框眼镜等。
+  - id: standees
+    name: 立牌素材
+    description: 半身或全身立牌，用于聊天界面或宣传展示，姿态自然，可能需要带简单阴影或底座。透明背景。
+    final_count: 20
+    candidate_count: 60
+    transparent: true
+    size: 2048x3072
+    prompt_template: (masterpiece, best quality), full body, standing, {character_name},
+      1girl, solo, {pose}, {expression}, casual, looking at viewer, soft smile, white
+      background, transparent shadow, anime style, soft lighting, detailed rendering
+    negative_prompt: nsfw, lowres, bad anatomy, bad hands, text, watermark, extra
+      limbs, blurry, complex background
+    notes: 姿势包含：正面站立（标准）、侧身、手插口袋、挥手、捧书、歪头等。表情温柔可爱。
+  - id: avatars
+    name: 头像
+    description: 方形或圆形裁剪的头像，突出面部表情和特征，用于聊天头像或标识。多种表情（微笑、开心、疑惑、害羞等）。透明背景。
+    final_count: 3
+    candidate_count: 9
+    transparent: true
+    size: 1024x1024
+    prompt_template: (masterpiece, best quality), portrait, face focus, {character_name},
+      1girl, solo, {expression}, star hairpin, amber eyes, black-blue hair, simple
+      background, white background, anime style, soft shading, cute
+    negative_prompt: nsfw, lowres, bad anatomy, extra fingers, text, watermark, messy
+      hair, detailed background, 3D, realistic
+    notes: 至少包括：标准微笑、开心眯眼笑、害羞脸红、疑惑歪头。保证星星发饰和眼睛颜色清晰可见。
+  - id: stickers
+    name: 表情贴纸
+    description: Q版或夸张化的表情贴纸，用于聊天互动，可能结合文字或符号。风格更可爱、简化，透明背景。
+    final_count: 10
+    candidate_count: 30
+    transparent: true
+    size: 1024x1024
+    prompt_template: (masterpiece, best quality), chibi, sticker, {character_name},
+      1girl, solo, cute, {expression}, exaggerated expression, simple white background,
+      vector style, flat color, clean lines, no shadows
+    negative_prompt: nsfw, lowres, bad anatomy, text, watermark, complex background,
+      realistic, photo
+    notes: 表情包括：爱心眼、哭泣、愤怒（可爱型）、点赞、OK手势、疑问、流汗等。可能需要加入简单道具如书本或茶杯。
+  - id: cg
+    name: 情景插画
+    description: 高质量全彩插画，包含详细背景和情景，展现角色在故事中的瞬间。用于宣传或剧情配图。不透明。
+    final_count: 15
+    candidate_count: 45
+    transparent: false
+    size: 3072x2048
+    prompt_template: (masterpiece, best quality), illustration, detailed background,
+      {scene}, {character_name}, 1girl, solo, {action}, {expression}, beautiful lighting,
+      soft colors, anime style, depth of field, emotional, book aesthetic
+    negative_prompt: nsfw, lowres, bad anatomy, bad hands, text, watermark, letterbox,
+      simple background, rough sketch
+    notes: 场景包括：午后图书馆窗边阅读、下雨天咖啡馆靠窗座位、校园樱花树下、夜晚台灯下写信、秋季公园长椅等。
+  consistency_notes: 所有图像必须保持角色核心外观一致：黑青色及肩发、暖琥珀眼、星形发饰（左侧）、浅色针织开衫。表情和姿势需符合天真宜人、书卷气的设定。避免过度性感或成熟。

@@ -1,8 +1,14 @@
 schema_version: 1
 role_id: "sumika"
-status: "draft"
-generated_by: "local drafts plus DeepSeek expansion pipeline"
+status: "deepseek_expanded_and_image_selected"
+generated_by: "local drafts, DeepSeek v4-pro max thinking expansion, Yunwu gpt-image-2 image pipeline"
 asset_policy:
   selected_assets_tracked: true
   candidates_archived: true
   raw_api_records_redacted: true
+text_assets:
+  detailed_manifest: "roles/sumika/detailed/manifest.yml"
+image_assets:
+  selected_manifest: "assets/generated/sumika_v3/manifest.yml"
+  selected_count: 73
+  candidate_attempts: 219

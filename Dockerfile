@@ -21,7 +21,7 @@ RUN pip install .
 
 COPY config ./config
 COPY assets ./assets
+COPY roles ./roles
 
 EXPOSE 8787
 CMD ["uvicorn", "sumika_agent.app:app", "--host", "0.0.0.0", "--port", "8787"]
-

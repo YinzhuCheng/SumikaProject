@@ -5,6 +5,7 @@ This directory contains reusable deployment templates. Real hostnames, QQ accoun
 ## Files
 
 - `compose.yml`: Docker Compose stack for `sumika-agent`, NapCat, and optional AstrBot.
+- Advanced-memory sidecars are behind the `advanced-memory` Compose profile and require `scripts/manage_upstreams.py clone` plus `apply-patches` before building.
 - `.env.example`: application environment template.
 - `napcat.env.example`: NapCat systemd environment template.
 - `sumika-agent.service`: Docker Compose systemd template.
@@ -32,6 +33,16 @@ secrets/admin_token
 ```
 
 The files above are ignored by git.
+
+Optional advanced-memory environment:
+
+```env
+MEMORY_LLM_BASE_URL=https://api.deepseek.com
+MEMORY_LLM_MODEL=deepseek-v4-pro
+MEMORY_LLM_API_KEY=<server-side-memory-llm-key>
+NEO4J_AUTH=neo4j/<strong-local-password>
+SUMIKA_POSTGRES_PASSWORD=<strong-local-password>
+```
 
 ## Local Sync
 
@@ -69,6 +80,17 @@ sudo cp deploy/sumika-agent.service /etc/systemd/system/sumika-agent.service
 sudo systemctl daemon-reload
 sudo systemctl enable --now sumika-agent
 ```
+
+To prepare optional advanced-memory sidecars:
+
+```bash
+.venv/bin/python scripts/manage_upstreams.py clone
+.venv/bin/python scripts/manage_upstreams.py apply-patches
+docker compose -f deploy/compose.yml --profile advanced-memory build
+docker compose -f deploy/compose.yml --profile advanced-memory up -d
+```
+
+The main agent keeps SQLite fallback enabled, so QQ text replies continue even if these sidecars are down.
 
 ## NapCat Shell Service
 

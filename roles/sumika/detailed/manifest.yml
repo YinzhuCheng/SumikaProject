@@ -1,0 +1,111 @@
+schema_version: 1
+model: deepseek-v4-pro
+thinking:
+  type: enabled
+  reasoning_effort: max
+generated_at: 2026-06-04T18:34:50+0800
+sections:
+- section: identity
+  path: roles/sumika/detailed/identity.yml
+  usage:
+    prompt_tokens: 463
+    completion_tokens: 4240
+    total_tokens: 4703
+    prompt_tokens_details:
+      cached_tokens: 384
+    completion_tokens_details:
+      reasoning_tokens: 3179
+    prompt_cache_hit_tokens: 384
+    prompt_cache_miss_tokens: 79
+  model: deepseek-v4-pro
+- section: personality
+  path: roles/sumika/detailed/personality.yml
+  usage:
+    prompt_tokens: 455
+    completion_tokens: 3756
+    total_tokens: 4211
+    prompt_tokens_details:
+      cached_tokens: 384
+    completion_tokens_details:
+      reasoning_tokens: 2394
+    prompt_cache_hit_tokens: 384
+    prompt_cache_miss_tokens: 71
+  model: deepseek-v4-pro
+- section: thinking_style
+  path: roles/sumika/detailed/thinking_style.yml
+  usage:
+    prompt_tokens: 394
+    completion_tokens: 3197
+    total_tokens: 3591
+    prompt_tokens_details:
+      cached_tokens: 384
+    completion_tokens_details:
+      reasoning_tokens: 2783
+    prompt_cache_hit_tokens: 384
+    prompt_cache_miss_tokens: 10
+  model: deepseek-v4-pro
+- section: speech_style
+  path: roles/sumika/detailed/speech_style.yml
+  usage:
+    prompt_tokens: 447
+    completion_tokens: 3032
+    total_tokens: 3479
+    prompt_tokens_details:
+      cached_tokens: 384
+    completion_tokens_details:
+      reasoning_tokens: 2277
+    prompt_cache_hit_tokens: 384
+    prompt_cache_miss_tokens: 63
+  model: deepseek-v4-pro
+- section: relationships
+  path: roles/sumika/detailed/relationships.yml
+  usage:
+    prompt_tokens: 439
+    completion_tokens: 3439
+    total_tokens: 3878
+    prompt_tokens_details:
+      cached_tokens: 384
+    completion_tokens_details:
+      reasoning_tokens: 2143
+    prompt_cache_hit_tokens: 384
+    prompt_cache_miss_tokens: 55
+  model: deepseek-v4-pro
+- section: worldbook
+  path: roles/sumika/detailed/worldbook.yml
+  usage:
+    prompt_tokens: 504
+    completion_tokens: 5698
+    total_tokens: 6202
+    prompt_tokens_details:
+      cached_tokens: 384
+    completion_tokens_details:
+      reasoning_tokens: 4586
+    prompt_cache_hit_tokens: 384
+    prompt_cache_miss_tokens: 120
+  model: deepseek-v4-pro
+- section: visual_bible
+  path: roles/sumika/detailed/visual_bible.yml
+  usage:
+    prompt_tokens: 469
+    completion_tokens: 3726
+    total_tokens: 4195
+    prompt_tokens_details:
+      cached_tokens: 384
+    completion_tokens_details:
+      reasoning_tokens: 3231
+    prompt_cache_hit_tokens: 384
+    prompt_cache_miss_tokens: 85
+  model: deepseek-v4-pro
+- section: image_plan
+  path: roles/sumika/detailed/image_plan.yml
+  usage:
+    prompt_tokens: 489
+    completion_tokens: 5109
+    total_tokens: 5598
+    prompt_tokens_details:
+      cached_tokens: 384
+    completion_tokens_details:
+      reasoning_tokens: 3405
+    prompt_cache_hit_tokens: 384
+    prompt_cache_miss_tokens: 105
+  model: deepseek-v4-pro

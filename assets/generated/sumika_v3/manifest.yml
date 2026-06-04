@@ -1,0 +1,1861 @@
+schema_version: 1
+model: gpt-image-2
+generated_at: 2026-06-04T18:38:37+0800
+dry_run: false
+smoke: false
+stages:
+- id: line_art
+  candidate_count: 30
+  success_count: 30
+  selected_count: 10
+  results:
+  - stage: line_art
+    index: 1
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_001.png
+    alpha: true
+    response:
+      created: 1780569525
+    selected_path: assets/generated/sumika_v3/line_art/line_art_01.png
+  - stage: line_art
+    index: 2
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_002.png
+    alpha: true
+    response:
+      created: 1780569526
+    selected_path: assets/generated/sumika_v3/line_art/line_art_02.png
+  - stage: line_art
+    index: 3
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_003.png
+    alpha: true
+    response:
+      created: 1780569525
+    selected_path: assets/generated/sumika_v3/line_art/line_art_03.png
+  - stage: line_art
+    index: 4
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_004.png
+    alpha: true
+    response:
+      created: 1780569525
+    selected_path: assets/generated/sumika_v3/line_art/line_art_04.png
+  - stage: line_art
+    index: 5
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_005.png
+    alpha: true
+    response:
+      created: 1780569526
+    selected_path: assets/generated/sumika_v3/line_art/line_art_05.png
+  - stage: line_art
+    index: 6
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_006.png
+    alpha: true
+    response:
+      created: 1780569586
+    selected_path: assets/generated/sumika_v3/line_art/line_art_06.png
+  - stage: line_art
+    index: 7
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_007.png
+    alpha: true
+    response:
+      created: 1780569593
+    selected_path: assets/generated/sumika_v3/line_art/line_art_07.png
+  - stage: line_art
+    index: 8
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_008.png
+    alpha: true
+    response:
+      created: 1780569638
+    selected_path: assets/generated/sumika_v3/line_art/line_art_08.png
+  - stage: line_art
+    index: 9
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_009.png
+    alpha: true
+    response:
+      created: 1780569666
+    selected_path: assets/generated/sumika_v3/line_art/line_art_09.png
+  - stage: line_art
+    index: 10
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_010.png
+    alpha: true
+    response:
+      created: 1780569677
+    selected_path: assets/generated/sumika_v3/line_art/line_art_10.png
+  - stage: line_art
+    index: 11
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_011.png
+    alpha: true
+    response:
+      created: 1780569733
+  - stage: line_art
+    index: 12
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_012.png
+    alpha: true
+    response:
+      created: 1780569735
+  - stage: line_art
+    index: 13
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_013.png
+    alpha: true
+    response:
+      created: 1780569738
+  - stage: line_art
+    index: 14
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_014.png
+    alpha: true
+    response:
+      created: 1780569747
+  - stage: line_art
+    index: 15
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_015.png
+    alpha: true
+    response:
+      created: 1780569794
+  - stage: line_art
+    index: 16
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_016.png
+    alpha: true
+    response:
+      created: 1780569799
+  - stage: line_art
+    index: 17
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_017.png
+    alpha: true
+    response:
+      created: 1780569799
+  - stage: line_art
+    index: 18
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_018.png
+    alpha: true
+    response:
+      created: 1780569809
+  - stage: line_art
+    index: 19
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_019.png
+    alpha: true
+    response:
+      created: 1780569858
+  - stage: line_art
+    index: 20
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_020.png
+    alpha: true
+    response:
+      created: 1780569878
+  - stage: line_art
+    index: 21
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_021.png
+    alpha: true
+    response:
+      created: 1780569879
+  - stage: line_art
+    index: 22
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_022.png
+    alpha: true
+    response:
+      created: 1780569896
+  - stage: line_art
+    index: 23
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_023.png
+    alpha: true
+    response:
+      created: 1780569901
+  - stage: line_art
+    index: 24
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_024.png
+    alpha: true
+    response:
+      created: 1780569958
+  - stage: line_art
+    index: 25
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_025.png
+    alpha: true
+    response:
+      created: 1780569962
+  - stage: line_art
+    index: 26
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_026.png
+    alpha: true
+    response:
+      created: 1780570010
+  - stage: line_art
+    index: 27
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_027.png
+    alpha: true
+    response:
+      created: 1780570026
+  - stage: line_art
+    index: 28
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_028.png
+    alpha: true
+    response:
+      created: 1780570047
+  - stage: line_art
+    index: 29
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_029_repair.png
+    alpha: true
+    repaired: true
+    registered_existing_repair: true
+  - stage: line_art
+    index: 30
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/line_art/line_art_030.png
+    alpha: true
+    response:
+      created: 1780570068
+- id: costume_props
+  candidate_count: 45
+  success_count: 45
+  selected_count: 15
+  results:
+  - stage: costume_props
+    index: 1
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_001.png
+    alpha: true
+    response:
+      created: 1780570299
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_01.png
+  - stage: costume_props
+    index: 2
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_002.png
+    alpha: true
+    response:
+      created: 1780570320
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_02.png
+  - stage: costume_props
+    index: 3
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_003.png
+    alpha: true
+    response:
+      created: 1780570299
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_03.png
+  - stage: costume_props
+    index: 4
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_004.png
+    alpha: true
+    response:
+      created: 1780570304
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_04.png
+  - stage: costume_props
+    index: 5
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_005.png
+    alpha: true
+    response:
+      created: 1780570314
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_05.png
+  - stage: costume_props
+    index: 6
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_006.png
+    alpha: true
+    response:
+      created: 1780570370
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_06.png
+  - stage: costume_props
+    index: 7
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_007.png
+    alpha: true
+    response:
+      created: 1780570382
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_07.png
+  - stage: costume_props
+    index: 8
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_008.png
+    alpha: true
+    response:
+      created: 1780570449
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_08.png
+  - stage: costume_props
+    index: 9
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_009.png
+    alpha: true
+    response:
+      created: 1780570455
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_09.png
+  - stage: costume_props
+    index: 10
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_010.png
+    alpha: true
+    response:
+      created: 1780570467
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_10.png
+  - stage: costume_props
+    index: 11
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_011.png
+    alpha: true
+    response:
+      created: 1780570472
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_11.png
+  - stage: costume_props
+    index: 12
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_012.png
+    alpha: true
+    response:
+      created: 1780570470
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_12.png
+  - stage: costume_props
+    index: 13
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_013.png
+    alpha: true
+    response:
+      created: 1780570532
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_13.png
+  - stage: costume_props
+    index: 14
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_014.png
+    alpha: true
+    response:
+      created: 1780570550
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_14.png
+  - stage: costume_props
+    index: 15
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_015.png
+    alpha: true
+    response:
+      created: 1780570596
+    selected_path: assets/generated/sumika_v3/costume_props/costume_props_15.png
+  - stage: costume_props
+    index: 16
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_016.png
+    alpha: true
+    response:
+      created: 1780570600
+  - stage: costume_props
+    index: 17
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_017.png
+    alpha: true
+    response:
+      created: 1780570613
+  - stage: costume_props
+    index: 18
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_018.png
+    alpha: true
+    response:
+      created: 1780570617
+  - stage: costume_props
+    index: 19
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_019.png
+    alpha: true
+    response:
+      created: 1780570661
+  - stage: costume_props
+    index: 20
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_020.png
+    alpha: true
+    response:
+      created: 1780570668
+  - stage: costume_props
+    index: 21
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_021.png
+    alpha: true
+    response:
+      created: 1780570678
+  - stage: costume_props
+    index: 22
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_022.png
+    alpha: true
+    response:
+      created: 1780570694
+  - stage: costume_props
+    index: 23
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_023.png
+    alpha: true
+    response:
+      created: 1780570701
+  - stage: costume_props
+    index: 24
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_024.png
+    alpha: true
+    response:
+      created: 1780570737
+  - stage: costume_props
+    index: 25
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_025.png
+    alpha: true
+    response:
+      created: 1780570767
+  - stage: costume_props
+    index: 26
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_026.png
+    alpha: true
+    response:
+      created: 1780570786
+  - stage: costume_props
+    index: 27
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_027.png
+    alpha: true
+    response:
+      created: 1780570793
+  - stage: costume_props
+    index: 28
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_028.png
+    alpha: true
+    response:
+      created: 1780570815
+  - stage: costume_props
+    index: 29
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_029.png
+    alpha: true
+    response:
+      created: 1780570817
+  - stage: costume_props
+    index: 30
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_030.png
+    alpha: true
+    response:
+      created: 1780570829
+  - stage: costume_props
+    index: 31
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_031_repair.png
+    alpha: true
+    repaired: true
+    registered_existing_repair: true
+  - stage: costume_props
+    index: 32
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_032.png
+    alpha: true
+    response:
+      created: 1780570852
+  - stage: costume_props
+    index: 33
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_033.png
+    alpha: true
+    response:
+      created: 1780570883
+  - stage: costume_props
+    index: 34
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_034.png
+    alpha: true
+    response:
+      created: 1780570908
+  - stage: costume_props
+    index: 35
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_035.png
+    alpha: true
+    response:
+      created: 1780570924
+  - stage: costume_props
+    index: 36
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_036.png
+    alpha: true
+    response:
+      created: 1780570968
+  - stage: costume_props
+    index: 37
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_037.png
+    alpha: true
+    response:
+      created: 1780570970
+  - stage: costume_props
+    index: 38
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_038.png
+    alpha: true
+    response:
+      created: 1780570990
+  - stage: costume_props
+    index: 39
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_039.png
+    alpha: true
+    response:
+      created: 1780571038
+  - stage: costume_props
+    index: 40
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_040.png
+    alpha: true
+    response:
+      created: 1780571076
+  - stage: costume_props
+    index: 41
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_041.png
+    alpha: true
+    response:
+      created: 1780571105
+  - stage: costume_props
+    index: 42
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_042.png
+    alpha: true
+    response:
+      created: 1780571123
+  - stage: costume_props
+    index: 43
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_043_retry.png
+    alpha: true
+    response:
+      created: 1780571179
+    retried_for_alpha: true
+  - stage: costume_props
+    index: 44
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_044.png
+    alpha: true
+    response:
+      created: 1780571141
+  - stage: costume_props
+    index: 45
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/costume_props/costume_props_045.png
+    alpha: true
+    response:
+      created: 1780571172
+- id: standees
+  candidate_count: 60
+  success_count: 59
+  selected_count: 20
+  results:
+  - stage: standees
+    index: 1
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_001.png
+    alpha: true
+    response:
+      created: 1780571279
+    selected_path: assets/generated/sumika_v3/standees/standees_01.png
+  - stage: standees
+    index: 2
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_002.png
+    alpha: true
+    response:
+      created: 1780571280
+    selected_path: assets/generated/sumika_v3/standees/standees_02.png
+  - stage: standees
+    index: 3
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_003.png
+    alpha: true
+    response:
+      created: 1780571308
+    selected_path: assets/generated/sumika_v3/standees/standees_03.png
+  - stage: standees
+    index: 4
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_004.png
+    alpha: true
+    response:
+      created: 1780571281
+    selected_path: assets/generated/sumika_v3/standees/standees_04.png
+  - stage: standees
+    index: 5
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_005.png
+    alpha: true
+    response:
+      created: 1780571280
+    selected_path: assets/generated/sumika_v3/standees/standees_05.png
+  - stage: standees
+    index: 6
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_006.png
+    alpha: true
+    response:
+      created: 1780571347
+    selected_path: assets/generated/sumika_v3/standees/standees_06.png
+  - stage: standees
+    index: 7
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_007.png
+    alpha: true
+    response:
+      created: 1780571347
+    selected_path: assets/generated/sumika_v3/standees/standees_07.png
+  - stage: standees
+    index: 8
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_008.png
+    alpha: true
+    response:
+      created: 1780571353
+    selected_path: assets/generated/sumika_v3/standees/standees_08.png
+  - stage: standees
+    index: 9
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_009.png
+    alpha: true
+    response:
+      created: 1780571392
+    selected_path: assets/generated/sumika_v3/standees/standees_09.png
+  - stage: standees
+    index: 10
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_010.png
+    alpha: true
+    response:
+      created: 1780571412
+    selected_path: assets/generated/sumika_v3/standees/standees_10.png
+  - stage: standees
+    index: 11
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_011.png
+    alpha: true
+    response:
+      created: 1780571432
+    selected_path: assets/generated/sumika_v3/standees/standees_11.png
+  - stage: standees
+    index: 12
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_012.png
+    alpha: true
+    response:
+      created: 1780571453
+    selected_path: assets/generated/sumika_v3/standees/standees_12.png
+  - stage: standees
+    index: 13
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_013.png
+    alpha: true
+    response:
+      created: 1780571465
+    selected_path: assets/generated/sumika_v3/standees/standees_13.png
+  - stage: standees
+    index: 14
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_014.png
+    alpha: true
+    response:
+      created: 1780571495
+    selected_path: assets/generated/sumika_v3/standees/standees_14.png
+  - stage: standees
+    index: 15
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_015.png
+    alpha: true
+    response:
+      created: 1780571497
+    selected_path: assets/generated/sumika_v3/standees/standees_15.png
+  - stage: standees
+    index: 16
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_016.png
+    alpha: true
+    response:
+      created: 1780571518
+    selected_path: assets/generated/sumika_v3/standees/standees_16.png
+  - stage: standees
+    index: 17
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_017.png
+    alpha: true
+    response:
+      created: 1780571531
+    selected_path: assets/generated/sumika_v3/standees/standees_17.png
+  - stage: standees
+    index: 18
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_018.png
+    alpha: true
+    response:
+      created: 1780571536
+    selected_path: assets/generated/sumika_v3/standees/standees_18.png
+  - stage: standees
+    index: 19
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_019.png
+    alpha: true
+    response:
+      created: 1780571559
+    selected_path: assets/generated/sumika_v3/standees/standees_19.png
+  - stage: standees
+    index: 20
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_020.png
+    alpha: true
+    response:
+      created: 1780571564
+    selected_path: assets/generated/sumika_v3/standees/standees_20.png
+  - stage: standees
+    index: 21
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_021.png
+    alpha: true
+    response:
+      created: 1780571580
+  - stage: standees
+    index: 22
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_022.png
+    alpha: true
+    response:
+      created: 1780571599
+  - stage: standees
+    index: 23
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_023.png
+    alpha: true
+    response:
+      created: 1780571647
+  - stage: standees
+    index: 24
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_024.png
+    alpha: true
+    response:
+      created: 1780571665
+  - stage: standees
+    index: 25
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_025.png
+    alpha: true
+    response:
+      created: 1780571679
+  - stage: standees
+    index: 26
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_026.png
+    alpha: true
+    response:
+      created: 1780571671
+  - stage: standees
+    index: 27
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_027.png
+    alpha: true
+    response:
+      created: 1780571698
+  - stage: standees
+    index: 28
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_028.png
+    alpha: true
+    response:
+      created: 1780571744
+  - stage: standees
+    index: 29
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_029.png
+    alpha: true
+    response:
+      created: 1780571755
+  - stage: standees
+    index: 30
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_030.png
+    alpha: true
+    response:
+      created: 1780571755
+  - stage: standees
+    index: 31
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_031.png
+    alpha: true
+    response:
+      created: 1780571771
+  - stage: standees
+    index: 32
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_032_repair.png
+    alpha: true
+    repaired: true
+    registered_existing_repair: true
+  - stage: standees
+    index: 33
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_033.png
+    alpha: true
+    response:
+      created: 1780571812
+  - stage: standees
+    index: 34
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_034_repair.png
+    alpha: true
+    repaired: true
+    registered_existing_repair: true
+  - stage: standees
+    index: 35
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_035.png
+    alpha: true
+    response:
+      created: 1780571872
+  - stage: standees
+    index: 36
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_036.png
+    alpha: true
+    response:
+      created: 1780571922
+  - stage: standees
+    index: 37
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_037.png
+    alpha: true
+    response:
+      created: 1780571921
+  - stage: standees
+    index: 38
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_038.png
+    alpha: true
+    response:
+      created: 1780571981
+  - stage: standees
+    index: 39
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_039.png
+    alpha: true
+    response:
+      created: 1780571985
+  - stage: standees
+    index: 40
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_040.png
+    alpha: true
+    response:
+      created: 1780571991
+  - stage: standees
+    index: 41
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_041.png
+    alpha: true
+    response:
+      created: 1780572053
+  - stage: standees
+    index: 42
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_042.png
+    alpha: true
+    response:
+      created: 1780572060
+  - stage: standees
+    index: 43
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_043.png
+    alpha: true
+    response:
+      created: 1780572077
+  - stage: standees
+    index: 44
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_044.png
+    alpha: true
+    response:
+      created: 1780572082
+  - stage: standees
+    index: 45
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_045.png
+    alpha: true
+    response:
+      created: 1780572095
+  - stage: standees
+    index: 46
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_046.png
+    alpha: true
+    response:
+      created: 1780572131
+  - stage: standees
+    index: 47
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_047.png
+    alpha: true
+    response:
+      created: 1780572169
+  - stage: standees
+    index: 48
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_048.png
+    alpha: true
+    response:
+      created: 1780572174
+  - stage: standees
+    index: 49
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_049.png
+    alpha: true
+    response:
+      created: 1780572192
+  - stage: standees
+    index: 50
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_050.png
+    alpha: true
+    response:
+      created: 1780572239
+  - stage: standees
+    index: 51
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_051.png
+    alpha: true
+    response:
+      created: 1780572238
+  - stage: standees
+    index: 52
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_052.png
+    alpha: true
+    response:
+      created: 1780572256
+  - stage: standees
+    index: 53
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_053.png
+    alpha: true
+    response:
+      created: 1780572283
+  - stage: standees
+    index: 54
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_054.png
+    alpha: true
+    response:
+      created: 1780572304
+  - stage: standees
+    index: 55
+    transparent_required: true
+    status: failed
+    path: assets/generated/candidates/sumika_v3/standees/standees_055.png
+    error: 'Server error ''503 Service Unavailable'' for url ''https://yunwu.ai/v1/images/generations''
+
+      For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503'
+  - stage: standees
+    index: 56
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_056.png
+    alpha: true
+    response:
+      created: 1780572350
+  - stage: standees
+    index: 57
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_057.png
+    alpha: true
+    response:
+      created: 1780572357
+  - stage: standees
+    index: 58
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_058.png
+    alpha: true
+    response:
+      created: 1780572383
+  - stage: standees
+    index: 59
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_059.png
+    alpha: true
+    response:
+      created: 1780572412
+  - stage: standees
+    index: 60
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/standees/standees_060.png
+    alpha: true
+    response:
+      created: 1780572419
+- id: avatars
+  candidate_count: 9
+  success_count: 8
+  selected_count: 3
+  results:
+  - stage: avatars
+    index: 1
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/avatars/avatars_001.png
+    alpha: true
+    response:
+      created: 1780572591
+    selected_path: assets/generated/sumika_v3/avatars/avatars_01.png
+  - stage: avatars
+    index: 2
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/avatars/avatars_002.png
+    alpha: true
+    response:
+      created: 1780572593
+    selected_path: assets/generated/sumika_v3/avatars/avatars_02.png
+  - stage: avatars
+    index: 3
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/avatars/avatars_003.png
+    alpha: true
+    response:
+      created: 1780572592
+    selected_path: assets/generated/sumika_v3/avatars/avatars_03.png
+  - stage: avatars
+    index: 4
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/avatars/avatars_004.png
+    alpha: true
+    response:
+      created: 1780572620
+  - stage: avatars
+    index: 5
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/avatars/avatars_005.png
+    alpha: true
+    response:
+      created: 1780572608
+  - stage: avatars
+    index: 6
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/avatars/avatars_006.png
+    alpha: true
+    response:
+      created: 1780572669
+  - stage: avatars
+    index: 7
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/avatars/avatars_007.png
+    alpha: true
+    response:
+      created: 1780572682
+  - stage: avatars
+    index: 8
+    transparent_required: true
+    status: failed
+    path: assets/generated/candidates/sumika_v3/avatars/avatars_008.png
+    error: 'Server error ''503 Service Unavailable'' for url ''https://yunwu.ai/v1/images/generations''
+
+      For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503'
+  - stage: avatars
+    index: 9
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/avatars/avatars_009.png
+    alpha: true
+    response:
+      created: 1780572746
+- id: stickers
+  candidate_count: 30
+  success_count: 29
+  selected_count: 10
+  results:
+  - stage: stickers
+    index: 1
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_001.png
+    alpha: true
+    response:
+      created: 1780572840
+    selected_path: assets/generated/sumika_v3/stickers/stickers_01.png
+  - stage: stickers
+    index: 2
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_002.png
+    alpha: true
+    response:
+      created: 1780572837
+    selected_path: assets/generated/sumika_v3/stickers/stickers_02.png
+  - stage: stickers
+    index: 3
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_003.png
+    alpha: true
+    response:
+      created: 1780572851
+    selected_path: assets/generated/sumika_v3/stickers/stickers_03.png
+  - stage: stickers
+    index: 4
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_004.png
+    alpha: true
+    response:
+      created: 1780572847
+    selected_path: assets/generated/sumika_v3/stickers/stickers_04.png
+  - stage: stickers
+    index: 5
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_005.png
+    alpha: true
+    response:
+      created: 1780572838
+    selected_path: assets/generated/sumika_v3/stickers/stickers_05.png
+  - stage: stickers
+    index: 6
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_006.png
+    alpha: true
+    response:
+      created: 1780572907
+    selected_path: assets/generated/sumika_v3/stickers/stickers_06.png
+  - stage: stickers
+    index: 7
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_007.png
+    alpha: true
+    response:
+      created: 1780572928
+    selected_path: assets/generated/sumika_v3/stickers/stickers_07.png
+  - stage: stickers
+    index: 8
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_008.png
+    alpha: true
+    response:
+      created: 1780572991
+    selected_path: assets/generated/sumika_v3/stickers/stickers_08.png
+  - stage: stickers
+    index: 9
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_009.png
+    alpha: true
+    response:
+      created: 1780572993
+    selected_path: assets/generated/sumika_v3/stickers/stickers_09.png
+  - stage: stickers
+    index: 10
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_010.png
+    alpha: true
+    response:
+      created: 1780572998
+    selected_path: assets/generated/sumika_v3/stickers/stickers_10.png
+  - stage: stickers
+    index: 11
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_011.png
+    alpha: true
+    response:
+      created: 1780573016
+  - stage: stickers
+    index: 12
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_012.png
+    alpha: true
+    response:
+      created: 1780573035
+  - stage: stickers
+    index: 13
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_013.png
+    alpha: true
+    response:
+      created: 1780573059
+  - stage: stickers
+    index: 14
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_014.png
+    alpha: true
+    response:
+      created: 1780573061
+  - stage: stickers
+    index: 15
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_015.png
+    alpha: true
+    response:
+      created: 1780573123
+  - stage: stickers
+    index: 16
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_016.png
+    alpha: true
+    response:
+      created: 1780573127
+  - stage: stickers
+    index: 17
+    transparent_required: true
+    status: failed
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_017.png
+    error: 'Server error ''503 Service Unavailable'' for url ''https://yunwu.ai/v1/images/generations''
+
+      For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503'
+  - stage: stickers
+    index: 18
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_018.png
+    alpha: true
+    response:
+      created: 1780573149
+  - stage: stickers
+    index: 19
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_019.png
+    alpha: true
+    response:
+      created: 1780573186
+  - stage: stickers
+    index: 20
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_020.png
+    alpha: true
+    response:
+      created: 1780573199
+  - stage: stickers
+    index: 21
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_021.png
+    alpha: true
+    response:
+      created: 1780573205
+  - stage: stickers
+    index: 22
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_022.png
+    alpha: true
+    response:
+      created: 1780573269
+  - stage: stickers
+    index: 23
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_023.png
+    alpha: true
+    response:
+      created: 1780573295
+  - stage: stickers
+    index: 24
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_024.png
+    alpha: true
+    response:
+      created: 1780573320
+  - stage: stickers
+    index: 25
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_025.png
+    alpha: true
+    response:
+      created: 1780573332
+  - stage: stickers
+    index: 26
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_026.png
+    alpha: true
+    response:
+      created: 1780573336
+  - stage: stickers
+    index: 27
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_027.png
+    alpha: true
+    response:
+      created: 1780573362
+  - stage: stickers
+    index: 28
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_028.png
+    alpha: true
+    response:
+      created: 1780573390
+  - stage: stickers
+    index: 29
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_029.png
+    alpha: true
+    response:
+      created: 1780573396
+  - stage: stickers
+    index: 30
+    transparent_required: true
+    status: ok
+    path: assets/generated/candidates/sumika_v3/stickers/stickers_030.png
+    alpha: true
+    response:
+      created: 1780573393
+- id: cg
+  candidate_count: 45
+  success_count: 43
+  selected_count: 15
+  results:
+  - stage: cg
+    index: 1
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_001.png
+    alpha: false
+    response:
+      created: 1780573570
+    selected_path: assets/generated/sumika_v3/cg/cg_01.png
+  - stage: cg
+    index: 2
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_002.png
+    alpha: false
+    response:
+      created: 1780573577
+    selected_path: assets/generated/sumika_v3/cg/cg_02.png
+  - stage: cg
+    index: 3
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_003.png
+    alpha: false
+    response:
+      created: 1780573560
+    selected_path: assets/generated/sumika_v3/cg/cg_03.png
+  - stage: cg
+    index: 4
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_004.png
+    alpha: false
+    response:
+      created: 1780573553
+    selected_path: assets/generated/sumika_v3/cg/cg_04.png
+  - stage: cg
+    index: 5
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_005.png
+    alpha: false
+    response:
+      created: 1780573554
+    selected_path: assets/generated/sumika_v3/cg/cg_05.png
+  - stage: cg
+    index: 6
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_006.png
+    alpha: false
+    response:
+      created: 1780573627
+    selected_path: assets/generated/sumika_v3/cg/cg_06.png
+  - stage: cg
+    index: 7
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_007.png
+    alpha: false
+    response:
+      created: 1780573670
+    selected_path: assets/generated/sumika_v3/cg/cg_07.png
+  - stage: cg
+    index: 8
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_008.png
+    alpha: false
+    response:
+      created: 1780573695
+    selected_path: assets/generated/sumika_v3/cg/cg_08.png
+  - stage: cg
+    index: 9
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_009.png
+    alpha: false
+    response:
+      created: 1780573689
+    selected_path: assets/generated/sumika_v3/cg/cg_09.png
+  - stage: cg
+    index: 10
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_010.png
+    alpha: false
+    response:
+      created: 1780573715
+    selected_path: assets/generated/sumika_v3/cg/cg_10.png
+  - stage: cg
+    index: 11
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_011.png
+    alpha: false
+    response:
+      created: 1780573749
+    selected_path: assets/generated/sumika_v3/cg/cg_11.png
+  - stage: cg
+    index: 12
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_012.png
+    alpha: false
+    response:
+      created: 1780573759
+    selected_path: assets/generated/sumika_v3/cg/cg_12.png
+  - stage: cg
+    index: 13
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_013.png
+    alpha: false
+    response:
+      created: 1780573781
+    selected_path: assets/generated/sumika_v3/cg/cg_13.png
+  - stage: cg
+    index: 14
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_014.png
+    alpha: false
+    response:
+      created: 1780573795
+    selected_path: assets/generated/sumika_v3/cg/cg_14.png
+  - stage: cg
+    index: 15
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_015.png
+    alpha: false
+    response:
+      created: 1780573800
+    selected_path: assets/generated/sumika_v3/cg/cg_15.png
+  - stage: cg
+    index: 16
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_016.png
+    alpha: false
+    response:
+      created: 1780573819
+  - stage: cg
+    index: 17
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_017.png
+    alpha: false
+    response:
+      created: 1780573867
+  - stage: cg
+    index: 18
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_018.png
+    alpha: false
+    response:
+      created: 1780573869
+  - stage: cg
+    index: 19
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_019.png
+    alpha: false
+    response:
+      created: 1780573889
+  - stage: cg
+    index: 20
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_020.png
+    alpha: false
+    response:
+      created: 1780573908
+  - stage: cg
+    index: 21
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_021.png
+    alpha: false
+    response:
+      created: 1780573929
+  - stage: cg
+    index: 22
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_022.png
+    alpha: false
+    response:
+      created: 1780573978
+  - stage: cg
+    index: 23
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_023.png
+    alpha: false
+    response:
+      created: 1780573980
+  - stage: cg
+    index: 24
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_024.png
+    alpha: false
+    response:
+      created: 1780574012
+  - stage: cg
+    index: 25
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_025.png
+    alpha: false
+    response:
+      created: 1780574030
+  - stage: cg
+    index: 26
+    transparent_required: false
+    status: failed
+    path: assets/generated/candidates/sumika_v3/cg/cg_026.png
+    error: All connection attempts failed
+  - stage: cg
+    index: 27
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_027.png
+    alpha: false
+    response:
+      created: 1780574043
+  - stage: cg
+    index: 28
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_028.png
+    alpha: false
+    response:
+      created: 1780574048
+  - stage: cg
+    index: 29
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_029.png
+    alpha: false
+    response:
+      created: 1780574093
+  - stage: cg
+    index: 30
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_030.png
+    alpha: false
+    response:
+      created: 1780574122
+  - stage: cg
+    index: 31
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_031.png
+    alpha: false
+    response:
+      created: 1780574148
+  - stage: cg
+    index: 32
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_032.png
+    alpha: false
+    response:
+      created: 1780574153
+  - stage: cg
+    index: 33
+    transparent_required: false
+    status: failed
+    path: assets/generated/candidates/sumika_v3/cg/cg_033.png
+    error: 'Server error ''503 Service Unavailable'' for url ''https://yunwu.ai/v1/images/generations''
+
+      For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503'
+  - stage: cg
+    index: 34
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_034.png
+    alpha: false
+    response:
+      created: 1780574227
+  - stage: cg
+    index: 35
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_035.png
+    alpha: false
+    response:
+      created: 1780574270
+  - stage: cg
+    index: 36
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_036.png
+    alpha: false
+    response:
+      created: 1780574263
+  - stage: cg
+    index: 37
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_037.png
+    alpha: false
+    response:
+      created: 1780574288
+  - stage: cg
+    index: 38
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_038.png
+    alpha: false
+    response:
+      created: 1780574340
+  - stage: cg
+    index: 39
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_039.png
+    alpha: false
+    response:
+      created: 1780574349
+  - stage: cg
+    index: 40
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_040_repair.png
+    alpha: false
+    response:
+      created: 1780576299
+    repaired: true
+  - stage: cg
+    index: 41
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_041.png
+    alpha: false
+    response:
+      created: 1780574372
+  - stage: cg
+    index: 42
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_042.png
+    alpha: false
+    response:
+      created: 1780574473
+  - stage: cg
+    index: 43
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_043.png
+    alpha: false
+    response:
+      created: 1780574456
+  - stage: cg
+    index: 44
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_044.png
+    alpha: false
+    response:
+      created: 1780574478
+  - stage: cg
+    index: 45
+    transparent_required: false
+    status: ok
+    path: assets/generated/candidates/sumika_v3/cg/cg_045.png
+    alpha: false
+    response:
+      created: 1780574481

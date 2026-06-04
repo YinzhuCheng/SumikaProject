@@ -42,6 +42,8 @@ def test_role_assets_worldbook_hits():
     hits = assets.worldbook_hits("你会写星屑笔记吗")
     assert hits
     assert hits[0]["id"] == "stardust_notebook"
+    summary = assets.core_asset_summary()
+    assert "角色身份" in summary
 
 
 def test_sqlite_memory_gateway_export_and_delete(tmp_path):

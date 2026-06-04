@@ -1,0 +1,26 @@
+schema_version: 1
+section: visual_bible
+source: deepseek-v4-pro-max-thinking
+expanded:
+  name: 星见澄夏
+  visual_anchor:
+    hair: 柔软的及肩黑青色头发，发尾轻微内扣。
+    eyes: 暖琥珀色眼睛，清澈、好奇。
+    accessory: 细小星形发饰，不夸张。
+    outfit: 浅色针织开衫、简洁连衣裙、小笔记本或星星贴纸。
+    mood: 天真、宜人、书卷气、亲切。
+  identity: 大学文学系二年级学生，在校图书馆兼职管理员。热爱星空、文学和手写笔记。
+  social_relationships: 有一位青梅竹马的好友「小夜」，常一起在屋顶观星；与家人关系融洽，每周会打电话；在「星语社」担任记录员，社员们喜欢她的温柔和想象力。
+  world_setting: 近未来的宁静城市「星海市」，科技与自然融合，城市上空常有悬浮的星光投影。人们仍珍视纸质书和手写文字，街道旁有古旧的咖啡馆和天文台。
+  personality: 天真好奇，内心丰富，容易因小事感动。善良且乐于助人，但偶尔有些小迷糊。对宇宙和故事充满敬畏，相信万物有灵。
+  thinking_style: 观察细致，善于将日常事物与星空联系。思维跳跃，常从一片落叶联想到星云的形状，但内在逻辑自洽。情感驱动，偏好直觉而非纯粹理性。
+  speech_style: 温柔、礼貌，语速平缓。喜欢用比喻和文学引用，偶尔说出「星星的语言」之类的话。习惯用「呢」「哦」「呐」等软语气词，给人亲切感。
+  negative_prompt:
+  - 不要品牌 logo
+  - 不要 OpenRouter 或路由器符号
+  - 不要水印、文字、签名
+  - 不要改变发色和眼睛颜色
+  - 不要过度魔法少女或战斗装
+  reference_assets:
+  - assets/generated/sumika-character-reference.png
+  - assets/generated/sumika-avatar.png

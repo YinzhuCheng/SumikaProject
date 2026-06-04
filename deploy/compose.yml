@@ -17,6 +17,7 @@ services:
     volumes:
       - ../config:/app/config:ro
       - ../assets:/app/assets
+      - ../roles:/app/roles:ro
       - ../data:/app/data
       - ../secrets/openrouter_key:/run/secrets/openrouter_key:ro
 
@@ -47,3 +48,81 @@ services:
       - "127.0.0.1:6185:6185"
     volumes:
       - ../data/astrbot:/AstrBot/data
+
+  neo4j:
+    image: neo4j:5-community
+    container_name: sumika-neo4j
+    restart: unless-stopped
+    profiles:
+      - advanced-memory
+    environment:
+      - NEO4J_AUTH=${NEO4J_AUTH:-neo4j/sumika-local-dev}
+      - NEO4J_server_memory_heap_initial__size=512m
+      - NEO4J_server_memory_heap_max__size=1024m
+    ports:
+      - "127.0.0.1:7474:7474"
+      - "127.0.0.1:7687:7687"
+    volumes:
+      - ../data/neo4j:/data
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: sumika-postgres
+    restart: unless-stopped
+    profiles:
+      - advanced-memory
+    environment:
+      - POSTGRES_DB=${SUMIKA_POSTGRES_DB:-sumika_memory}
+      - POSTGRES_USER=${SUMIKA_POSTGRES_USER:-sumika}
+      - POSTGRES_PASSWORD=${SUMIKA_POSTGRES_PASSWORD:-sumika-local-dev}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - ../data/postgres:/var/lib/postgresql/data
+
+  memmachine:
+    build:
+      context: ../vendor/upstream/memmachine
+    container_name: sumika-memmachine
+    restart: unless-stopped
+    profiles:
+      - advanced-memory
+    environment:
+      - OPENAI_BASE_URL=${MEMORY_LLM_BASE_URL:-https://api.deepseek.com}
+      - OPENAI_API_KEY=${MEMORY_LLM_API_KEY:-}
+      - OPENAI_MODEL=${MEMORY_LLM_MODEL:-deepseek-v4-pro}
+      - NEO4J_URI=bolt://neo4j:7687
+      - DATABASE_URL=postgresql://sumika:sumika-local-dev@postgres:5432/sumika_memory
+    depends_on:
+      - neo4j
+      - postgres
+
+  graphiti:
+    build:
+      context: ../vendor/upstream/graphiti
+    container_name: sumika-graphiti
+    restart: unless-stopped
+    profiles:
+      - advanced-memory
+    environment:
+      - OPENAI_BASE_URL=${MEMORY_LLM_BASE_URL:-https://api.deepseek.com}
+      - OPENAI_API_KEY=${MEMORY_LLM_API_KEY:-}
+      - OPENAI_MODEL=${MEMORY_LLM_MODEL:-deepseek-v4-pro}
+      - NEO4J_URI=bolt://neo4j:7687
+    depends_on:
+      - neo4j
+
+  cognee:
+    build:
+      context: ../vendor/upstream/cognee
+    container_name: sumika-cognee
+    restart: unless-stopped
+    profiles:
+      - advanced-memory
+    environment:
+      - OPENAI_BASE_URL=${MEMORY_LLM_BASE_URL:-https://api.deepseek.com}
+      - OPENAI_API_KEY=${MEMORY_LLM_API_KEY:-}
+      - OPENAI_MODEL=${MEMORY_LLM_MODEL:-deepseek-v4-pro}
+      - DATABASE_URL=postgresql://sumika:sumika-local-dev@postgres:5432/sumika_memory
+    depends_on:
+      - postgres
