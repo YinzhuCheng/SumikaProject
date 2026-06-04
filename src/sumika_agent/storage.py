@@ -49,7 +49,19 @@ class Store:
                     user_id text not null,
                     message text not null,
                     reply text not null,
+                    redaction_labels text not null default '[]',
+                    metadata text not null default '{}',
                     created_at real not null
+                );
+                create table if not exists relationships (
+                    subject_id text not null,
+                    object_id text not null,
+                    relation_type text not null default 'related',
+                    strength real not null default 0,
+                    summary text not null default '',
+                    metadata text not null default '{}',
+                    updated_at real not null,
+                    primary key(subject_id, object_id, relation_type)
                 );
                 create table if not exists approvals (
                     id integer primary key autoincrement,
@@ -79,6 +91,8 @@ class Store:
                 );
                 """
             )
+            self._ensure_column("interaction_log", "redaction_labels", "text not null default '[]'")
+            self._ensure_column("interaction_log", "metadata", "text not null default '{}'")
 
     def get_json(self, key: str, default: Any = None) -> Any:
         with self._lock:
@@ -169,12 +183,102 @@ class Store:
                 result.append(data)
             return result
 
-    def record_interaction(self, scope: str, target_id: str, user_id: str, message: str, reply: str) -> None:
+    def _columns(self, table: str) -> set[str]:
+        rows = self._conn.execute(f"pragma table_info({table})").fetchall()
+        return {str(row["name"]) for row in rows}
+
+    def _ensure_column(self, table: str, column: str, definition: str) -> None:
+        if column not in self._columns(table):
+            self._conn.execute(f"alter table {table} add column {column} {definition}")
+
+    def record_interaction(
+        self,
+        scope: str,
+        target_id: str,
+        user_id: str,
+        message: str,
+        reply: str,
+        *,
+        redaction_labels: list[str] | None = None,
+        metadata: dict[str, Any] | None = None,
+    ) -> None:
         with self._lock, self._conn:
             self._conn.execute(
-                "insert into interaction_log(scope, target_id, user_id, message, reply, created_at) "
-                "values(?, ?, ?, ?, ?, ?)",
-                (scope, target_id, user_id, message[:2000], reply[:2000], time.time()),
+                "insert into interaction_log(scope, target_id, user_id, message, reply, "
+                "redaction_labels, metadata, created_at) values(?, ?, ?, ?, ?, ?, ?, ?)",
+                (
+                    scope,
+                    target_id,
+                    user_id,
+                    message[:2000],
+                    reply[:2000],
+                    json.dumps(redaction_labels or [], ensure_ascii=False),
+                    json.dumps(metadata or {}, ensure_ascii=False),
+                    time.time(),
+                ),
+            )
+
+    def upsert_relationship(
+        self, subject_id: str, object_id: str, patch: dict[str, Any]
+    ) -> None:
+        relation_type = str(patch.get("relation_type") or "related")
+        strength = float(patch.get("strength") or 0)
+        summary = str(patch.get("summary") or "")
+        metadata = patch.get("metadata") or {}
+        with self._lock, self._conn:
+            self._conn.execute(
+                "insert into relationships(subject_id, object_id, relation_type, strength, summary, metadata, updated_at) "
+                "values(?, ?, ?, ?, ?, ?, ?) "
+                "on conflict(subject_id, object_id, relation_type) do update set "
+                "strength=excluded.strength, summary=excluded.summary, metadata=excluded.metadata, updated_at=excluded.updated_at",
+                (
+                    str(subject_id),
+                    str(object_id),
+                    relation_type,
+                    strength,
+                    summary,
+                    json.dumps(metadata, ensure_ascii=False),
+                    time.time(),
+                ),
+            )
+
+    def list_relationships(self, subject_id: str, limit: int = 50) -> list[dict[str, Any]]:
+        with self._lock:
+            rows = self._conn.execute(
+                "select * from relationships where subject_id = ? order by updated_at desc limit ?",
+                (str(subject_id), limit),
+            ).fetchall()
+            result = []
+            for row in rows:
+                item = dict(row)
+                item["metadata"] = json.loads(item["metadata"] or "{}")
+                result.append(item)
+            return result
+
+    def export_user_memory(self, user_id: str) -> dict[str, Any]:
+        with self._lock:
+            profile = self.get_user_memory(user_id)
+            interactions = [
+                dict(row)
+                for row in self._conn.execute(
+                    "select * from interaction_log where user_id = ? order by created_at desc limit 500",
+                    (str(user_id),),
+                ).fetchall()
+            ]
+            relationships = self.list_relationships(user_id, limit=200)
+            return {
+                "profile": profile,
+                "interactions": interactions,
+                "relationships": relationships,
+            }
+
+    def delete_user_memory(self, user_id: str) -> None:
+        with self._lock, self._conn:
+            self._conn.execute("delete from user_memory where user_id = ?", (str(user_id),))
+            self._conn.execute("delete from interaction_log where user_id = ?", (str(user_id),))
+            self._conn.execute(
+                "delete from relationships where subject_id = ? or object_id = ?",
+                (str(user_id), str(user_id)),
             )
 
     def enqueue_approval(self, request: dict[str, Any]) -> int:
@@ -250,4 +354,3 @@ class Store:
                 "select * from whitelist order by target_type, target_id"
             ).fetchall()
             return [dict(row) for row in rows]
-

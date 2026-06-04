@@ -90,4 +90,3 @@ class MultimodalProcessor:
             return compact[:800]
         except Exception:
             return ""
-

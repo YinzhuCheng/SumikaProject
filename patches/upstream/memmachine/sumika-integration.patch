@@ -1,0 +1,35 @@
+diff --git a/integrations/sumika/qq_episode_schema.py b/integrations/sumika/qq_episode_schema.py
+new file mode 100644
+index 0000000..cc9d56f
+--- /dev/null
++++ b/integrations/sumika/qq_episode_schema.py
+@@ -0,0 +1,29 @@
++from __future__ import annotations
++
++from dataclasses import dataclass, field
++from typing import Any, Literal
++
++
++QQScope = Literal["private", "group"]
++
++
++@dataclass(frozen=True)
++class QQEpisode:
++    scope: QQScope
++    qq_user_id: str
++    group_id: str | None
++    message_id: str | None
++    nickname: str | None
++    timestamp: float
++    modality: str
++    redaction_status: str
++    message: str
++    reply: str
++    metadata: dict[str, Any] = field(default_factory=dict)
++
++
++SUMIKA_PROFILE_EXTRACTION_PROMPT = """
++你正在为星见澄夏维护长期个人记忆。只提取稳定偏好、边界、称呼和明确承诺。
++不要保存手机号、住址、证件号、密码、token、cookie、验证码等敏感信息。
++输出 JSON：display_name、preferences、boundaries、summary_delta、relationship_delta。
++""".strip()

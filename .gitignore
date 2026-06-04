@@ -10,6 +10,7 @@ data/
 artifacts/
 wheelhouse-linux/
 secrets/
+vendor/upstream/
 *.log
 *.jsonl
 *.pem
@@ -17,5 +18,7 @@ secrets/
 *.crt
 .env
 assets/generated/raw/
+assets/generated/candidates/
+assets/generated/archive/
 deploy/.env
 deploy/*.local

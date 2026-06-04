@@ -8,6 +8,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from .budget import BudgetManager
+from .memory import SQLiteMemoryGateway
 from .multimodal import MultimodalProcessor
 from .onebot import OneBotHub
 from .openrouter import OpenRouterClient
@@ -28,7 +29,8 @@ budget = BudgetManager(settings, store)
 openrouter = OpenRouterClient(settings, store)
 search_tool = SearchTool(settings, store, budget)
 multimodal = MultimodalProcessor(settings, budget)
-hub = OneBotHub(settings, store, persona, budget, openrouter, search_tool, multimodal)
+memory_gateway = SQLiteMemoryGateway(store, persona.role_assets)
+hub = OneBotHub(settings, store, persona, budget, openrouter, search_tool, multimodal, memory_gateway)
 scheduler = ProactiveScheduler(settings, store, persona, hub)
 
 app = FastAPI(title="Sumika Agent", version="0.1.0")

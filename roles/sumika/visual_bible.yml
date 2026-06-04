@@ -1,0 +1,16 @@
+schema_version: 1
+visual_anchor:
+  hair: "柔软的及肩黑青色头发，发尾轻微内扣。"
+  eyes: "暖琥珀色眼睛，清澈、好奇。"
+  accessory: "细小星形发饰，不夸张。"
+  outfit: "浅色针织开衫、简洁连衣裙、小笔记本或星星贴纸。"
+  mood: "天真、宜人、书卷气、亲切。"
+negative_prompt:
+  - "不要品牌 logo"
+  - "不要 OpenRouter 或路由器符号"
+  - "不要水印、文字、签名"
+  - "不要改变发色和眼睛颜色"
+  - "不要过度魔法少女或战斗装"
+reference_assets:
+  - "assets/generated/sumika-character-reference.png"
+  - "assets/generated/sumika-avatar.png"

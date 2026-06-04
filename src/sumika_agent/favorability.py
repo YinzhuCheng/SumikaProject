@@ -22,10 +22,9 @@ def clamp(value: float) -> float:
 
 def natural_invite_reply(favor: float) -> str:
     if favor < 0:
-        return "我先想想吧，突然这样有点紧张。"
+        return "我先想想哦，突然这样有点紧张。"
     if favor < 40:
         return "我考虑考虑，等我想一下嘛。"
     if favor < 75:
-        return "欸，听起来好像不错。我先记下来，等我想想。"
+        return "嗯，听起来好像不错。我先记下来，等我想想。"
     return "你这么说我会认真考虑的。先让我悄悄记一下。"
-

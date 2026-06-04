@@ -1,0 +1,33 @@
+diff --git a/integrations/sumika_ontology.py b/integrations/sumika_ontology.py
+new file mode 100644
+index 0000000..1266ca0
+--- /dev/null
++++ b/integrations/sumika_ontology.py
+@@ -0,0 +1,27 @@
++from __future__ import annotations
++
++from dataclasses import dataclass
++
++
++@dataclass(frozen=True)
++class SumikaOntologyNode:
++    label: str
++    description: str
++
++
++SUMIKA_ONTOLOGY = [
++    SumikaOntologyNode("QQUser", "QQ 用户，不保存敏感隐私字段。"),
++    SumikaOntologyNode("QQGroup", "QQ 群，仅用于白名单群和上下文范围。"),
++    SumikaOntologyNode("Persona", "星见澄夏角色自身及公开设定。"),
++    SumikaOntologyNode("Relationship", "用户、群和角色之间的自然关系。"),
++    SumikaOntologyNode("FavorabilityState", "内部亲近感层级，不向用户暴露数字。"),
++    SumikaOntologyNode("Promise", "聊天中形成的承诺和待办，必须带 episode provenance。"),
++    SumikaOntologyNode("InviteRequest", "好友或加群邀请，进入 GUI 审批。"),
++    SumikaOntologyNode("WorldbookConcept", "世界书概念、道具、地点、职业和社会关系。"),
++]
++
++SUMIKA_EDGE_REQUIREMENTS = {
++    "requires_episode_provenance": True,
++    "requires_valid_time": True,
++    "scope_fields": ["private", "group", "worldbook"],
++}

@@ -1,0 +1,36 @@
+diff --git a/integrations/sumika_worldbook.py b/integrations/sumika_worldbook.py
+new file mode 100644
+index 0000000..3bd8f36
+--- /dev/null
++++ b/integrations/sumika_worldbook.py
+@@ -0,0 +1,30 @@
++from __future__ import annotations
++
++from dataclasses import dataclass, field
++
++
++@dataclass(frozen=True)
++class SumikaWorldbookEntry:
++    entry_id: str
++    title: str
++    triggers: list[str]
++    content: str
++    scopes: list[str] = field(default_factory=lambda: ["persona", "world"])
++    min_favorability_layer: str = "cold"
++
++
++SUMIKA_WORLDBOOK_DATASET = {
++    "dataset_type": "sumika_worldbook",
++    "fields": [
++        "identity",
++        "personality",
++        "social_relationships",
++        "daily_positioning",
++        "props",
++        "places",
++        "interests",
++        "visual_bible",
++        "boundaries",
++    ],
++    "retrieval_signals": ["keyword", "semantic", "relationship_distance", "favorability_layer", "recent_context"],
++}

@@ -1,0 +1,48 @@
+schema_version: 1
+updated_at: "2026-06-04"
+repositories:
+  memmachine:
+    url: "https://github.com/MemMachine/MemMachine"
+    path: "vendor/upstream/memmachine"
+    commit: "d36797af53556c36ef37aaa56d4d821df2a12ffb"
+    branch: "codex/sumika-integration"
+    license: "Apache-2.0"
+    patch: "patches/upstream/memmachine/sumika-integration.patch"
+    runs_as_service: true
+    purpose: "主长期记忆服务：working、episodic、profile memory。"
+  graphiti:
+    url: "https://github.com/getzep/graphiti"
+    path: "vendor/upstream/graphiti"
+    commit: "34f56e65e0fe2096132c8d16f3a1a4ac9300a5f6"
+    branch: "codex/sumika-integration"
+    license: "Apache-2.0"
+    patch: "patches/upstream/graphiti/sumika-integration.patch"
+    runs_as_service: true
+    purpose: "时间感知关系图、事实有效期和 episode provenance。"
+  cognee:
+    url: "https://github.com/topoteretes/cognee"
+    path: "vendor/upstream/cognee"
+    commit: "cfb0aa4d0b3ae0154cf9f24e5908263d565341f4"
+    branch: "codex/sumika-integration"
+    license: "Apache-2.0"
+    patch: "patches/upstream/cognee/sumika-integration.patch"
+    runs_as_service: true
+    purpose: "世界书、角色知识库 ingestion 和 recall。"
+  mem0:
+    url: "https://github.com/mem0ai/mem0"
+    path: "vendor/upstream/mem0"
+    commit: "74771b4e76213da77d048ab1a13b926b4cb2cf4c"
+    branch: "codex/sumika-integration"
+    license: "Apache-2.0"
+    patch: "patches/upstream/mem0/sumika-integration.patch"
+    runs_as_service: false
+    purpose: "fallback 记忆算法、融合检索和评测基线。"
+  letta:
+    url: "https://github.com/letta-ai/letta"
+    path: "vendor/upstream/letta"
+    commit: "1131535716e8a31c9a437f8695e25ac98f203a24"
+    branch: "codex/sumika-integration"
+    license: "Apache-2.0"
+    patch: "patches/upstream/letta/sumika-integration.patch"
+    runs_as_service: false
+    purpose: "core memory block、自编辑记忆和 prompt/context engineering 参考。"

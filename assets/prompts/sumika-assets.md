@@ -35,4 +35,3 @@ Layout: 8 separate stickers in a 4x2 grid with generous spacing.
 Text: no text, no watermark, no speech bubbles.
 Constraints: original character only, no brand logos, no OpenRouter/router symbolism.
 ```
-

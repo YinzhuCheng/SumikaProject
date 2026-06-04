@@ -1,0 +1,33 @@
+diff --git a/integrations/sumika_memory_policy.py b/integrations/sumika_memory_policy.py
+new file mode 100644
+index 0000000..8f8b1fd
+--- /dev/null
++++ b/integrations/sumika_memory_policy.py
+@@ -0,0 +1,27 @@
++from __future__ import annotations
++
++
++SUMIKA_MEMORY_POLICY = {
++    "scope_fields": ["qq_user_id", "group_id", "scope"],
++    "privacy_first": True,
++    "add_only_extraction": True,
++    "retrieval_fusion": ["semantic", "bm25", "entity", "temporal"],
++    "favorability_weighted": True,
++    "forbidden_memory_types": [
++        "phone",
++        "address",
++        "id_card",
++        "password",
++        "token",
++        "cookie",
++        "authorization_header",
++    ],
++}
++
++SUMIKA_EVAL_TASKS = [
++    "episode_fidelity",
++    "profile_update",
++    "worldbook_recall",
++    "privacy_redaction",
++    "favorability_naturalization",
++]

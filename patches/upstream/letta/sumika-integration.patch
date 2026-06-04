@@ -1,0 +1,25 @@
+diff --git a/integrations/sumika_core_blocks.py b/integrations/sumika_core_blocks.py
+new file mode 100644
+index 0000000..988a8e2
+--- /dev/null
++++ b/integrations/sumika_core_blocks.py
+@@ -0,0 +1,19 @@
++from __future__ import annotations
++
++from dataclasses import dataclass
++
++
++@dataclass(frozen=True)
++class SumikaCoreBlockSpec:
++    label: str
++    writable: bool
++    description: str
++
++
++SUMIKA_CORE_BLOCKS = [
++    SumikaCoreBlockSpec("persona", False, "星见澄夏身份、人设和不可变表达边界。"),
++    SumikaCoreBlockSpec("worldbook", False, "世界书触发内容，只读进入 prompt。"),
++    SumikaCoreBlockSpec("human_profile", True, "当前 QQ 用户的称呼、偏好、边界和长期摘要。"),
++    SumikaCoreBlockSpec("relationship", True, "当前关系和自然亲近感表达层级，不暴露数字。"),
++    SumikaCoreBlockSpec("working_context", True, "当前会话的短期状态和未完成话题。"),
++]

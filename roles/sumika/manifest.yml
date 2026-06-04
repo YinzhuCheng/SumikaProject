@@ -1,0 +1,8 @@
+schema_version: 1
+role_id: "sumika"
+status: "draft"
+generated_by: "local drafts plus DeepSeek expansion pipeline"
+asset_policy:
+  selected_assets_tracked: true
+  candidates_archived: true
+  raw_api_records_redacted: true
